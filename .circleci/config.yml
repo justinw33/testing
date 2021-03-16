@@ -3,7 +3,7 @@
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2.1
 orbs:
-  golang-ci: epavlova/golang-ci@1.0.8
+  golang-ci: circleci/go@1.5.0
 
 jobs:
   build:
