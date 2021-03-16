@@ -13,6 +13,9 @@ jobs:
     working_directory: /go/src/github.com/justinw33/testing
     steps:
       - checkout
+      - persist_to_workspace:
+          root: workspace
+          paths: /go/src/github.com/justinw33/testing
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
@@ -20,8 +23,10 @@ jobs:
   build:
     docker: 
       - image: circleci/golang:1.9
-    working_directory: /go/src/github.com/justinw33/testing
+    # working_directory: /go/src/github.com/justinw33/testing
     steps:
+      - attach_workspace:
+          at: /go/src/github.com/justinw33/testing
       - run: go build .
 
 workflows:
