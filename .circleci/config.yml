@@ -28,4 +28,6 @@ workflows:
   main:
     jobs:
       - test
-      - build
+      - build:
+          requires:
+            - test 
