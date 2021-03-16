@@ -23,7 +23,7 @@ jobs:
   build:
     docker: 
       - image: circleci/golang:1.9
-    # working_directory: /go/src/github.com/justinw33/testing
+    working_directory: /go/src/github.com/justinw33/testing
     steps:
       - attach_workspace:
           at: /go/src/github.com/justinw33/testing
