@@ -13,12 +13,11 @@ jobs:
     working_directory: /go/src/github.com/justinw33/testing
     steps:
       - checkout
-      # - persist_to_workspace:
-      #     root: workspace
-      #     paths: 
-      #       - echo-output
+      - persist_to_workspace:
+          root: workspace
+          paths: 
+            - echo-output
       # specify any bash command here prefixed with `run: `
-      - run: pwd
       - run: go get -v -t -d ./...
       - run: go test -v ./...
   build:
