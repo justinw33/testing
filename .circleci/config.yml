@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - persist_to_workspace:
-          root: workspace
+          root: .
           paths: 
             - echo-output
       # specify any bash command here prefixed with `run: `
